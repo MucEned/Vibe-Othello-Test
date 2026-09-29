@@ -24,9 +24,6 @@ const difficultySwitcher = document.querySelector('#difficulty-switcher');
 const translations = {
   en: {
     topbarNote: 'FLIP THE BOARD · 64 CELLS',
-    eyebrow: 'Strategic board game',
-    titleStart: 'Claim',
-    titleEnd: 'every square.',
     black: 'Black',
     white: 'White',
     you: 'You',
@@ -50,9 +47,6 @@ const translations = {
   },
   vi: {
     topbarNote: 'LẬT THẾ CỜ · 64 Ô',
-    eyebrow: 'Bàn cờ chiến thuật',
-    titleStart: 'Chiếm lấy',
-    titleEnd: 'từng ô.',
     black: 'Đen',
     white: 'Trắng',
     you: 'Bạn',
