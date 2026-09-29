@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Othello | Lật thế cờ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#game" aria-label="Othello - về đầu trang">
+        <span class="brand-mark" aria-hidden="true">◉</span>
+        <span>OTHELLO</span>
+      </a>
+      <div class="topbar-actions">
+        <div class="topbar-note" data-i18n="topbarNote">FLIP THE BOARD · 64 CELLS</div>
+        <button class="language-button" id="language-button" type="button" aria-label="Switch language">VI</button>
+      </div>
+    </header>
+
+    <section class="hero" id="game">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">Strategic board game</p>
+        <h1><span data-i18n="titleStart">Claim</span> <em data-i18n="titleEnd">every square.</em></h1>
+      </div>
+      <div class="hero-rule" aria-hidden="true"></div>
+    </section>
+
+    <section class="game-layout" aria-label="Khu vực chơi Othello">
+      <div class="board-wrap">
+        <div class="scoreboard" aria-live="polite">
+          <div class="score-row black-score-row">
+            <span class="player-dot black-dot"></span>
+            <div><span class="score-name" data-i18n="black">Black</span><small id="black-label">You</small></div>
+            <strong id="black-score">2</strong>
+          </div>
+          <div class="score-row white-score-row">
+            <span class="player-dot white-dot"></span>
+            <div><span class="score-name" data-i18n="white">White</span><small id="white-label">Computer</small></div>
+            <strong id="white-score">2</strong>
+          </div>
+        </div>
+        <div class="board-meta">
+          <span id="move-counter">MOVE 01</span>
+          <span>O T H E L L O</span>
+        </div>
+        <div class="board-frame">
+          <div class="coordinates columns" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></div>
+          <div class="coordinates rows" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+          <div class="board" id="board" role="grid" aria-label="Bàn cờ Othello"></div>
+        </div>
+      </div>
+
+      <aside class="control-panel">
+        <div class="turn-card">
+          <span class="status-light" id="status-light"></span>
+          <p id="turn-message">Lượt Đen</p>
+        </div>
+
+        <div class="mode-switcher">
+          <div class="section-label" data-i18n="gameMode">Game mode</div>
+          <div class="mode-buttons" role="group" aria-label="Choose game mode">
+            <button class="mode-button active" data-mode="computer" data-i18n="computer">Computer</button>
+            <button class="mode-button" data-mode="local" data-i18n="local">2 players</button>
+          </div>
+        </div>
+
+        <div class="difficulty-switcher" id="difficulty-switcher">
+          <div class="section-label" data-i18n="difficulty">Difficulty</div>
+          <div class="difficulty-buttons" role="group" aria-label="Choose computer difficulty">
+            <button class="difficulty-button" data-difficulty="1" aria-label="Difficulty 1">1</button>
+            <button class="difficulty-button" data-difficulty="2" aria-label="Difficulty 2">2</button>
+            <button class="difficulty-button active" data-difficulty="3" aria-label="Difficulty 3">3</button>
+            <button class="difficulty-button" data-difficulty="4" aria-label="Difficulty 4">4</button>
+            <button class="difficulty-button" data-difficulty="5" aria-label="Difficulty 5">5</button>
+          </div>
+        </div>
+
+        <button class="new-game-button" id="new-game-button" type="button" data-i18n="newGame">
+          <span aria-hidden="true">↻</span> New game
+        </button>
+      </aside>
+    </section>
+  </main>
+
+  <div class="result-modal" id="result-modal" aria-hidden="true" role="dialog" aria-labelledby="result-title">
+    <div class="modal-card">
+      <span class="modal-kicker" data-i18n="gameOver">GAME OVER</span>
+      <h2 id="result-title">A fine game.</h2>
+      <p id="result-message"></p>
+      <button class="new-game-button" id="modal-new-game" type="button" data-i18n="playAgain">Play again</button>
+    </div>
+  </div>
+</body>
+</html>
