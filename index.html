@@ -13,9 +13,8 @@
 <body>
   <main class="app-shell">
     <header class="topbar">
-      <a class="brand" href="#game" aria-label="Othello - về đầu trang">
+      <a class="brand" href="#game" aria-label="Back to game">
         <span class="brand-mark" aria-hidden="true">◉</span>
-        <span>OTHELLO</span>
       </a>
       <div class="topbar-actions">
         <div class="topbar-note" data-i18n="topbarNote">FLIP THE BOARD · 64 CELLS</div>
@@ -23,15 +22,7 @@
       </div>
     </header>
 
-    <section class="hero" id="game">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="eyebrow">Strategic board game</p>
-        <h1><span data-i18n="titleStart">Claim</span> <em data-i18n="titleEnd">every square.</em></h1>
-      </div>
-      <div class="hero-rule" aria-hidden="true"></div>
-    </section>
-
-    <section class="game-layout" aria-label="Khu vực chơi Othello">
+    <section class="game-layout" id="game" aria-label="Khu vực chơi Othello">
       <div class="board-wrap">
         <div class="scoreboard" aria-live="polite">
           <div class="score-row black-score-row">
@@ -47,7 +38,6 @@
         </div>
         <div class="board-meta">
           <span id="move-counter">MOVE 01</span>
-          <span>O T H E L L O</span>
         </div>
         <div class="board-frame">
           <div class="coordinates columns" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span></div>
